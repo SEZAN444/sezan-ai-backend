@@ -57,7 +57,7 @@
                 flex:1;
                 padding:15px;
                 overflow-y:auto;
-                background:white;
+                background:#f9f9f9;
                 color:black;
                 font-family:Arial, sans-serif;
                 font-size:14px;">
