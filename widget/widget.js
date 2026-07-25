@@ -57,7 +57,7 @@
                 flex:1;
                 padding:15px;
                 overflow-y:auto;
-                background:#f5f5f5;">
+                background:#140505;">
         </div>
 
         <div style="
