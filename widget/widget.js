@@ -57,8 +57,8 @@
                 flex:1;
                 padding:15px;
                 overflow-y:auto;
-                background:#140505;
-                color:white;
+                background:white;
+                color:black;
                 font-family:Arial, sans-serif;
                 font-size:14px;">
         </div>
