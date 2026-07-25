@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 from api.chat import router as chat_router
@@ -8,10 +9,22 @@ from api.chat import router as chat_router
 # Create FastAPI app
 app = FastAPI(title="Sezan AI Assistant")
 
-# Register API routes
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://sezan-portfolio.netlify.app",
+        "http://localhost:8000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# API routes
 app.include_router(chat_router, prefix="/api")
 
-# Serve static folders
+# Static folders
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/widget", StaticFiles(directory="widget"), name="widget")
 
@@ -33,18 +46,3 @@ if __name__ == "__main__":
         port=8000,
         reload=True
     )
-
-from fastapi.middleware.cors import CORSMiddleware
-
-app = FastAPI(title="Sezan AI Assistant")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "https://sezan-portfolio.netlify.app",
-        "http://localhost:8000",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
