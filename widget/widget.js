@@ -131,7 +131,7 @@
 
         try {
 
-            const response = await fetch("/api/chat", {
+            const response = await fetch("https://sezan-ai-backend.onrender.com/api/chat", {
 
                 method: "POST",
 

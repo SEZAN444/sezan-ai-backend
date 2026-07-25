@@ -33,3 +33,18 @@ if __name__ == "__main__":
         port=8000,
         reload=True
     )
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(title="Sezan AI Assistant")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://sezan-portfolio.netlify.app",
+        "http://localhost:8000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
