@@ -57,7 +57,10 @@
                 flex:1;
                 padding:15px;
                 overflow-y:auto;
-                background:#140505;">
+                background:#140505;
+                color:white;
+                font-family:Arial, sans-serif;
+                font-size:14px;">
         </div>
 
         <div style="
